@@ -1,47 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposals | Home</title>
-</head>
-<body>
-    <h1>List of Proposals</h1>
+@extends('templates.main')
 
-    @if (Session::has('success'))
-        <div>
-            {{Session::get('success')}}
-            {{Session::put('success', null)}}
-        </div>
-    @endif
+@section('title')
+    Proposals
+@endsection
 
-    <a href="{{URL::to('/proposals/create')}}">Create</a>
+@section('subtitle')
+    Home
+@endsection
 
-    <table border="1">
+@section('heading')
+    List of Proposals
+@endsection
+
+@section('content')
+<a class="btn btn-primary float-right" href="{{URL::to('/proposals/create')}}">Create Proposal</a>
+<div class="container">
+    <table class="table">
         <thead>
-            <th>#</th>
-            <th>Title</th>
-            <th>Student Name</th>
-            <th>Session</th>
-            <th>Action</th>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Session</th>
+            <th scope="col">Action</th>
         </thead>
         <tbody>
             @foreach ($proposals as $proposal)
                 <tr>
-                    <td>1</td>
+                    <td scope="row">1</td>
                     <td>{{$proposal->title}}</td>
                     <td>{{$proposal->student_name}}</td>
                     <td>{{$proposal->session}}</td>
-                    <td>
-                        <a href="{{URL::to('/proposals/'.$proposal->id)}}" class="btn btn-sm btn-success">V</a>
+                    <td class="row">
+                        <a href="{{URL::to('/proposals/'.$proposal->id)}}" class="btn btn-sm btn-success">View</a>
                         {{-- <a href="#" class="btn btn-sm btn-danger">X</a> --}}
                         {!!Form::open(['action' => ['App\Http\Controllers\ProposalController@destroy', $proposal->id], 'method' => 'DELETE'])!!}
-                            {{Form::submit('X')}}
+                            {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger ml-1'])}}
                         {!!Form::close()!!}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+</div>
+@endsection

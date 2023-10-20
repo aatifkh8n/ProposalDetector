@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposals | Show</title>
-</head>
-<body>
-    <h1>List of Proposals</h1>
-    <table border="1">
-        <tr>
+@extends('templates.main')
+
+@section('title')
+    Proposals
+@endsection
+
+@section('subtitle')
+    Show
+@endsection
+
+@section('heading')
+    Show a Proposal
+@endsection
+
+@section('content')
+    <div class="container">
+    <table class="table">
+        <tr scope="row">
             <td>Title</td>
             <td>{{$proposal->title}}</td>
         </tr>
@@ -42,6 +49,7 @@
         </tr>
         <tr>
             <td colspan="2">
+                <div class="row float-right">
                 {{-- {!!Form::open(['action' => URL::to('/proposals/'.$proposal->id)])!!}
                     {{ csrf_field() }}
                     <a href="{{URL::to('/proposals/'.$proposal->id)}}" class="btn btn-sm btn-info">E</a>
@@ -51,12 +59,13 @@
                     @method('PUT')
                     <button type="submit">E</button>
                 </form> --}}
-                <a href="{{URL::to('/proposals/'.$proposal->id.'/edit')}}" class="btn btn-sm btn-info">E</a>
                 {!!Form::open(['action' => ['App\Http\Controllers\ProposalController@destroy', $proposal->id], 'method' => 'DELETE'])!!}
-                    {{Form::submit('X')}}
+                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!}
+                <a href="{{URL::to('/proposals/'.$proposal->id.'/edit')}}" class="btn btn-info ml-1">Edit</a>
+                </div>
             </td>
         </tr>
     </table>
-</body>
-</html>
+    </div>
+@endsection

@@ -1,48 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposals | Show</title>
-</head>
-<body>
-    <h1>List of Proposals</h1>
+@extends('templates.main')
+
+@section('title')
+    Proposals
+@endsection
+
+@section('subtitle')
+    Add
+@endsection
+
+@section('heading')
+    Add New Proposal
+@endsection
+
+@section('content')
     {!!Form::open(['action' => 'App\Http\Controllers\ProposalController@store', 'method' => 'POST'])!!}
     {{ csrf_field() }}
-        <div>
+        <div class="form-group">
             <label for="title">Title</label>
-            <input name="title" id="title" type="text" value="">
+            <input class="form-control" name="title" id="title" type="text" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="tools">Tools</label>
-            <input name="tools" id="tools" type="text" value="">
+            <input class="form-control" name="tools" id="tools" type="text" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="tech_stack">Tech Stack</label>
-            <input name="tech_stack" id="tech_stack" type="text" value="">
+            <input class="form-control" name="tech_stack" id="tech_stack" type="text" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="description">Description</label>
-            <input name="description" id="description" type="textarea" value="">
+            <input class="form-control" name="description" id="description" type="textarea" value="">
         </div>
         <hr>
-        <div>
+        <div class="form-group">
             <label for="student_name">Student Name</label>
-            <input name="student_name" id="student_name" type="text" value="">
+            <input class="form-control" name="student_name" id="student_name" type="text" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="date">Date</label>
-            <input name="date" id="date" type="date" value="">
+            <input class="form-control" name="date" id="date" type="date" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="session">Session</label>
-            <input name="session" id="session" type="text" value="">
+            <input class="form-control" name="session" id="session" type="text" value="">
         </div>
-        <div>
+        <div class="form-group">
             <label for="group_size">Group Size</label>
-            <input name="group_size" id="group_size" type="number" value="">
+            <input class="form-control" name="group_size" id="group_size" type="number" value="">
         </div>
-        {{Form::submit('Add')}}
+        {{Form::submit('Add New Proposal', ['class' => 'btn btn-lg btn-success float-right'])}}
     {!!Form::close()!!}
-</body>
-</html>
+@endsection

@@ -99,7 +99,7 @@ class ProposalController extends Controller
         $proposal = Proposal::find($id);
         $proposal->delete();
 
-        Session::put('success', 'New Proposal has been deleted successfully!');
+        Session::put('success', 'Proposal has been deleted successfully!');
 
         return redirect('/proposals');
     }
