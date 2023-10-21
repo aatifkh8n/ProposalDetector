@@ -15,7 +15,7 @@ You will store the data of previous FYPs and then search for the new one to see 
 
 4) Make a database for this project.
 
-5) copy-paste (duplicate) **.env.example** file and rename it to **.env** and configure it.
+5) copy-paste (duplicate) **.env.example** file, rename it to **.env** and configure it.
 
 6) $ ```php artisan migrate```
 

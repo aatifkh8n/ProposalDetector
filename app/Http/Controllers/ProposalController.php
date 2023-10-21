@@ -33,6 +33,7 @@ class ProposalController extends Controller
         $proposal = new Proposal;
 
         $proposal->title = $request->title;
+        $proposal->category = $request->category;
         $proposal->tools = $request->tools;
         $proposal->tech_stack = $request->tech_stack;
         $proposal->description = $request->description;
@@ -43,7 +44,7 @@ class ProposalController extends Controller
 
         $proposal->save();
 
-        Session::put('success', 'New Proposal has been added successfully!');
+        Session::put('success', 'New Proposal "' . $proposal->title . '" has been added successfully!');
 
         return redirect('/proposals');
     }
@@ -76,6 +77,7 @@ class ProposalController extends Controller
         // $this->validate($request, ['title' => 'reqiured']);
 
         $proposal->title = $request->title;
+        $proposal->category = $request->category;
         $proposal->tools = $request->tools;
         $proposal->tech_stack = $request->tech_stack;
         $proposal->description = $request->description;
@@ -86,7 +88,7 @@ class ProposalController extends Controller
 
         $proposal->update();
 
-        Session::put('success', 'Proposal has been updated successfully!');
+        Session::put('success', 'Proposal "' . $proposal->title . '" has been updated successfully!');
 
         return redirect('/proposals');
     }
@@ -97,9 +99,10 @@ class ProposalController extends Controller
     public function destroy(string $id)
     {
         $proposal = Proposal::find($id);
+        $title = $proposal->title;
         $proposal->delete();
 
-        Session::put('success', 'Proposal has been deleted successfully!');
+        Session::put('success', 'Proposal "' . $title . '" has been deleted successfully!');
 
         return redirect('/proposals');
     }

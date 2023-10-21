@@ -21,6 +21,10 @@
             <input class="form-control" name="title" id="title" type="text" value="{{$proposal->title}}">
         </div>
         <div class="form-group">
+            <label for="category">Category</label>
+            <input class="form-control" name="category" id="category" type="text" value="{{$proposal->category}}">
+        </div>
+        <div class="form-group">
             <label for="tools">Tools</label>
             <input class="form-control" name="tools" id="tools" type="text" value="{{$proposal->tools}}">
         </div>
@@ -50,7 +54,7 @@
             <input class="form-control" name="group_size" id="group_size" type="number" value="{{$proposal->group_size}}">
         </div>
         <div class="float-right">
-            <a href=".." class="btn btn-secondary">Cancel</a>
+            <a href="." class="btn btn-secondary">Cancel</a>
             {{Form::submit('Update Proposal', ['class' => 'btn btn-info ml-1'])}}
         </div>
         {!!Form::close()!!}

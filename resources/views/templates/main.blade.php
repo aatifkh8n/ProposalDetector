@@ -12,7 +12,10 @@
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body class="antialiased">
-        <h1 class="bg-info p-5 text-light">@yield('heading')</h1>
+        <div class="bg-info p-5">
+            <a class="text-light" href="{{URL::to('/')}}">ProposalDetector</a>
+            <h1 class="text-light">@yield('heading')</h1>
+        </div>
         
         @if (Session::has('success'))
         <div class="alert alert-success" role="alert">
@@ -22,7 +25,7 @@
         @endif
         
         
-        <div class="container my-5" style="min-height: 54vh;">
+        <div class="container my-5" style="min-height: 49vh;">
             @yield('content')
         </div>
         <footer class="p-3 text-center bg-dark text-light">

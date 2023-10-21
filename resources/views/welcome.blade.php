@@ -13,5 +13,9 @@
 @endsection
 
 @section('content')
-        <a class="btn btn-success" href="{{URL::to('/proposals/')}}">Show All Proposals</a>
+    <div class="row px-3">
+        <input class="form-control col" type="text" name="" id="" placeholder="Search a proposal here...">
+        <button class="btn btn-primary ml-1">Search Proposal</button>
+    </div>
+    <a class="btn btn-success mt-5 text-center" href="{{URL::to('/proposals/')}}">Show All Proposals</a>
 @endsection

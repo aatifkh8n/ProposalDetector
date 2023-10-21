@@ -20,6 +20,10 @@
             <td>{{$proposal->title}}</td>
         </tr>
         <tr>
+            <td>Category</td>
+            <td>{{$proposal->category}}</td>
+        </tr>
+        <tr>
             <td>Tools</td>
             <td>{{$proposal->tools}}</td>
         </tr>
@@ -59,8 +63,10 @@
                     @method('PUT')
                     <button type="submit">E</button>
                 </form> --}}
+                {{-- <a href="{{URL::to('/proposals')}}" class="btn btn-secondary">Back</a> --}}
+                <a href="." class="btn btn-secondary">Back</a>
                 {!!Form::open(['action' => ['App\Http\Controllers\ProposalController@destroy', $proposal->id], 'method' => 'DELETE'])!!}
-                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                    {{Form::submit('Delete', ['class' => 'btn btn-danger ml-1'])}}
                 {!!Form::close()!!}
                 <a href="{{URL::to('/proposals/'.$proposal->id.'/edit')}}" class="btn btn-info ml-1">Edit</a>
                 </div>
