@@ -13,7 +13,7 @@ class ProposalController extends Controller
      */
     public function index()
     {
-        $proposals = Proposal::All();
+        $proposals = Proposal::Paginate(10);
         return view('proposals.index')->with('proposals', $proposals);
     }
 

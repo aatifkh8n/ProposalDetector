@@ -20,17 +20,20 @@
             <label for="title">Title</label>
             <input class="form-control" name="title" id="title" type="text" value="{{$proposal->title}}">
         </div>
-        <div class="form-group">
-            <label for="category">Category</label>
-            <input class="form-control" name="category" id="category" type="text" value="{{$proposal->category}}">
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="category">Category</label>
+                <input class="form-control" name="category" id="category" type="text" value="{{$proposal->category}}">
+            </div>
+    
+            <div class="form-group col">
+                <label for="tech_stack">Tech Stack</label>
+                <input class="form-control" name="tech_stack" id="tech_stack" type="text" value="{{$proposal->tech_stack}}">
+            </div>
         </div>
         <div class="form-group">
             <label for="tools">Tools</label>
             <input class="form-control" name="tools" id="tools" type="text" value="{{$proposal->tools}}">
-        </div>
-        <div class="form-group">
-            <label for="tech_stack">Tech Stack</label>
-            <input class="form-control" name="tech_stack" id="tech_stack" type="text" value="{{$proposal->tech_stack}}">
         </div>
         <div class="form-group">
             <label for="description">Description</label>

@@ -13,12 +13,14 @@
 @endsection
     
 @section('content')
-<div class="row px-3">
-    <input class="form-control col" type="text" name="" id="" placeholder="Search a proposal here...">
-    <button class="btn btn-primary ml-1">Search Proposal</button>
+<div class="pt-3">
+    <form class="row">
+        <input class="form-control col" type="text" name="search" id="" placeholder="Search a proposal here...">
+        <input type="submit" class="btn btn-primary ml-1" value="Search Proposal"/>
+    </form>
 </div>
 
-<hr>
+<hr class="my-5">
 
 <a class="btn btn-success float-right" href="{{URL::to('/proposals/create')}}">Create Proposal</a>
 <div class="container">
@@ -48,5 +50,6 @@
             @endforeach
         </tbody>
     </table>
+    {{$proposals->links()}}
 </div>
 @endsection
