@@ -8,16 +8,14 @@
     Add
 @endsection
 
-@section('heading')
-    Add New Proposal
-@endsection
-
 @section('content')
+<div class="my-5">
+    <h2>Create Form</h2>
 {!!Form::open(['action' => 'App\Http\Controllers\ProposalController@store', 'method' => 'POST'])!!}
     {{ csrf_field() }}
     <div class="form-group">
         <label for="title">Title</label>
-        <input class="form-control" name="title" id="title" type="text">
+        <input class="form-control" name="title" id="title" type="text" autofocus>
     </div>
     <div class="row">
         <div class="form-group col-6">
@@ -55,7 +53,8 @@
         <label for="group_size">Group Size</label>
         <input class="form-control" name="group_size" id="group_size" type="number">
     </div>
-    <a href="." class="btn btn-secondary">Back</a>
-    {{Form::submit('Add New Proposal', ['class' => 'btn btn-success'])}}
+    <a href="{{URL::to('/proposals')}}" class="btn btn-secondary">Back</a>
+    {{Form::submit('Create Proposal', ['class' => 'btn btn-success'])}}
 {!!Form::close()!!}
+</div>
 @endsection

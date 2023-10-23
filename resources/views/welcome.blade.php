@@ -8,16 +8,14 @@
     Home
 @endsection
 
-@section('heading')
-    FYP Proposal Detection System
-@endsection
-
 @section('content')
-    <div class="row px-3">
-        <input class="form-control col" type="text" name="" id="" placeholder="Search a proposal here...">
-        <button class="btn btn-primary ml-1">Search Proposal</button>
-    </div>
-    <div class="d-flex">
-        <a class="btn btn-success mt-5 text-center" href="{{URL::to('/proposals/')}}">Show All Proposals</a>
-    </div>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">FYP Proposal Detector System</h1>
+        <p class="lead">The system stores the Final Year Project (FYP) Proposals and can search among previous done projects effectively and efficiently.</p>
+        <p class="lead">
+          <a href="{{URL::to('/proposals')}}" class="btn btn-lg btn-secondary">Try it!</a>
+        </p>
+      </main>
+
 @endsection

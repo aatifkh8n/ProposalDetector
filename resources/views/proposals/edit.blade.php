@@ -13,12 +13,13 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container my-5">
+        <h2>Edit Form</h2>
         {!!Form::open(['action' => ['App\Http\Controllers\ProposalController@update', $proposal->id], 'method' => 'PUT'])!!}
    
         <div class="form-group">
             <label for="title">Title</label>
-            <input class="form-control" name="title" id="title" type="text" value="{{$proposal->title}}">
+            <input class="form-control" name="title" id="title" type="text" value="{{$proposal->title}}" autofocus>
         </div>
         <div class="row">
             <div class="form-group col-6">
@@ -57,7 +58,7 @@
             <input class="form-control" name="group_size" id="group_size" type="number" value="{{$proposal->group_size}}">
         </div>
         <div class="float-right">
-            <a href="." class="btn btn-secondary">Cancel</a>
+            <a href="{{URL::to('/proposals/'.$proposal->id)}}" class="btn btn-secondary">Cancel</a>
             {{Form::submit('Update Proposal', ['class' => 'btn btn-info ml-1'])}}
         </div>
         {!!Form::close()!!}

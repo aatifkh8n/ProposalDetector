@@ -3,7 +3,23 @@
 This is a Final Year Project (FYP) Proposal Detector project developed using Laravel Framework of PHP with MySQL database.
 
 ## Working
-You will store the data of previous FYPs and then search for the new one to see exist or not in the database system.
+
+Here, you can store the data of FYP Proposals and then in future, you would be able to search for the one to check if exist in the database system or not.
+
+## Images
+
+1. Home Page
+<img src="images/Home.png" alt="HomePage" />
+2. Proposals Page
+<img src="images/Proposals.png" alt="ProposalsPage" />
+3. Last Page of Proposals
+<img src="images/Last Page.png" alt="LastPageOfProposals" />
+4. Create Page
+<img src="images/Create.png" alt="CreatePage" />
+5. View Page
+<img src="images/View.png" alt="ViewPage">
+6. Edit Page
+<img src="images/Edit.png" alt="EditPage">
 
 ## Installation
 
