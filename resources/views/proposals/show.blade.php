@@ -37,6 +37,10 @@
                 <td>{{$proposal->description}}</td>
             </tr>
             <tr>
+                <td>Supervisor Name</td>
+                <td>{{$proposal->supervisor}}</td>
+            </tr>
+            <tr>
                 <td>Student Name</td>
                 <td>{{$proposal->student_name}}</td>
             </tr>
