@@ -6,6 +6,10 @@ This is a Final Year Project (FYP) Proposal Detector project developed using Lar
 
 Here, you can store the data of FYP Proposals and then in future, you would be able to search for the one to check if exist in the database system or not.
 
+## ERD (Entity Relationship Diagram)
+
+<img src="images/ERD.png" alt="ERD" />
+
 ## Images
 
 1. Home Page
