@@ -14,6 +14,15 @@ class ProposalController extends Controller
     public function index()
     {
         $proposals = Proposal::Paginate(10);
+
+        if (request('search')) {
+            $proposals = Proposal::where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('category', 'like', '%' . request('search') . '%')
+                ->orWhere('tech_stack', 'like', '%' . request('search') . '%')
+                ->orWhere('session', 'like', '%' . request('search') . '%')
+                ->Paginate(10);
+        }
+        
         return view('proposals.index')->with('proposals', $proposals);
     }
 
