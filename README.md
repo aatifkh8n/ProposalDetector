@@ -25,6 +25,57 @@ Here, you can store the data of FYP Proposals and then in future, you would be a
 6. Edit Page
 <img src="images/Edit.png" alt="EditPage">
 
+## Attributes
+
+<table>
+    <thead>
+        <th>Attribute</th>
+        <th>Data Type</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Title</td>
+            <td>Short Text</td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>Short Text</td>
+        </tr>
+        <tr>
+            <td>Tools</td>
+            <td>Medium Text</td>
+        </tr>
+        <tr>
+            <td>Tech Stack</td>
+            <td>Long Text</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>Long Text</td>
+        </tr>
+        <tr>
+            <td>Supervisor Name</td>
+            <td>Short Text</td>
+        </tr>
+        <tr>
+            <td>Student Name</td>
+            <td>Short Text</td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>Date</td>
+        </tr>
+        <tr>
+            <td>Session</td>
+            <td>Short Text</td>
+        </tr>
+        <tr>
+            <td>Group Size</td>
+            <td>Number</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Installation
 
 1) Install **PHP**
