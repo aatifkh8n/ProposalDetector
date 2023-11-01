@@ -12,7 +12,7 @@
 <div class="mb-5">
     <div class="p-3">
         <form class="row">
-            <input class="form-control col" type="search" name="search" id="" placeholder="Search a proposal by Title, Category, Teach stack or Session" autofocus>
+            <input class="form-control col" type="search" name="search" id="" placeholder="Search a proposal by Title, Category, Tech stack or Session" autofocus>
             <input type="submit" class="btn btn-outline-light ml-1" value="Search Proposal"/>
         </form>
     </div>

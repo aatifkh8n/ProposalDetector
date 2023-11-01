@@ -48,6 +48,7 @@ class ProposalController extends Controller
         $proposal->description = $request->description;
         $proposal->date = $request->date;
         $proposal->supervisor = $request->supervisor;
+        $proposal->roll_number = $request->roll_number;
         $proposal->student_name = $request->student_name;
         $proposal->session = $request->session;
         $proposal->group_size = $request->group_size;
@@ -93,6 +94,7 @@ class ProposalController extends Controller
         $proposal->description = $request->description;
         $proposal->date = $request->date;
         $proposal->supervisor = $request->supervisor;
+        $proposal->roll_number = $request->roll_number;
         $proposal->student_name = $request->student_name;
         $proposal->session = $request->session;
         $proposal->group_size = $request->group_size;

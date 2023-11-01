@@ -46,6 +46,10 @@
             <input class="form-control" name="supervisor" id="supervisor" type="text" value="{{$proposal->supervisor}}">
         </div>
         <div class="form-group">
+            <label for="roll_number">Roll Number</label>
+            <input class="form-control" name="roll_number" id="roll_number" type="text" value="{{$proposal->roll_number}}">
+        </div>
+        <div class="form-group">
             <label for="student_name">Student Name</label>
             <input class="form-control" name="student_name" id="student_name" type="text" value="{{$proposal->student_name}}">
         </div>
