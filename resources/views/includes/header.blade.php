@@ -25,7 +25,8 @@
     <a href="{{URL::to('/')}}"><h3 class="masthead-brand text-light">ProposalDetector</h3></a>
     <nav class="nav nav-masthead justify-content-center">
       <a class="nav-link {{URL::current()==URL::to('/') ? 'active' : ''}}" href="{{URL::to('/')}}">Home</a>
-      <a class="nav-link {{URL::current()>=URL::to('/proposals/') ? 'active' : ''}}"" href="{{URL::to('/proposals')}}">Proposals</a>
+      <a class="nav-link {{URL::current()>=URL::to('/proposals/') ? 'active' : ''}}" href="{{URL::to('/proposals')}}">Proposals</a>
+      <a class="nav-link {{URL::current()==URL::to('/login/') ? 'active' : ''}}" href="{{URL::to('/login')}}">Login</a>
     </nav>
   </div>
 </header>
