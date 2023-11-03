@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProposalController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
-
 Route::resource('proposals', ProposalController::class);
+
+// user login, authentication
+Route::get('/login', [UserController::class, 'login']);
+Route::post('/authenticate', [UserController::class, 'authenticate']);
+
+// user register, creation
+Route::get('/register', [UserController::class, 'register']);
+Route::post('/create_user', [UserController::class, 'createUser']);

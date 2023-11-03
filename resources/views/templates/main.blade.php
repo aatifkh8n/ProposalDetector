@@ -20,6 +20,13 @@
                 {{Session::put('success', null)}}
             </div>
             @endif
+
+            @if (Session::has('failure'))
+            <div class="alert alert-danger mt-3" role="alert">
+                {{Session::get('failure')}}
+                {{Session::put('failure', null)}}
+            </div>
+            @endif
         
             @yield('content')
 
