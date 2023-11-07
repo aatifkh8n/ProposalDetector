@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('proposals', ProposalController::class);
+Route::resource('proposals', ProposalController::class)->middleware('auth');
 
 // user login, authentication
 Route::get('/login', [UserController::class, 'login']);
@@ -28,3 +28,6 @@ Route::post('/authenticate', [UserController::class, 'authenticate']);
 // user register, creation
 Route::get('/register', [UserController::class, 'register']);
 Route::post('/create_user', [UserController::class, 'createUser']);
+
+// user logout
+Route::get('/logout', [UserController::class, 'logout']);

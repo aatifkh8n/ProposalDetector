@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
 class UserController extends Controller
@@ -25,6 +26,7 @@ class UserController extends Controller
             return redirect('/login')->with('failure', 'Invalid credentials');
         }
         
+        Session::put('login', true);
         return redirect('/proposals')->with('success', 'Authenticated successfully');
     }
     
@@ -51,7 +53,15 @@ class UserController extends Controller
         $user->email = $email;
         $user->password = $hashed_password;
         $user->save();
-
+        
+        Session::put('login', true);
         return redirect('/')->with('success', 'New user "'.$username.'" created successfully');
+    }
+
+    public function logout() {
+        if (Session::get('login')) {
+            Session::forget('login');
+        }
+        return redirect('/login')->with('success', 'Logged out successfully');
     }
 }

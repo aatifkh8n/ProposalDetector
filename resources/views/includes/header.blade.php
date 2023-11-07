@@ -24,9 +24,13 @@
   <div class="inner">
     <a href="{{URL::to('/')}}"><h3 class="masthead-brand text-light">ProposalDetector</h3></a>
     <nav class="nav nav-masthead justify-content-center">
-      <a class="nav-link {{URL::current()==URL::to('/') ? 'active' : ''}}" href="{{URL::to('/')}}">Home</a>
-      <a class="nav-link {{URL::current()>=URL::to('/proposals/') ? 'active' : ''}}" href="{{URL::to('/proposals')}}">Proposals</a>
-      <a class="nav-link {{URL::current()==URL::to('/login/') ? 'active' : ''}}" href="{{URL::to('/login')}}">Login</a>
+      <a class="nav-link {{request()->is('/') ? 'active' : ''}}" href="{{URL::to('/')}}">Home</a>
+      <a class="nav-link {{request()->is('proposals*') ? 'active' : ''}}" href="{{URL::to('/proposals')}}">Proposals</a>
+      @if (Session::get('login'))
+      <a class="nav-link" href="{{URL::to('/logout')}}">Logout</a>  
+      @else
+        <a class="nav-link {{request()->is('login') || request()->is('register') ? 'active' : ''}}" href="{{URL::to('/login')}}">Login</a>  
+      @endif
     </nav>
   </div>
 </header>

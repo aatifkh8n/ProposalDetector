@@ -11,6 +11,7 @@
 @section('content')
 
       <main role="main" class="inner cover">
+        <h2 class="mb-4">Sign Up</h2>
         <form action="{{URL::to('/create_user')}}" method="post">
           {{ csrf_field() }}
           <div class="form-group">
@@ -35,6 +36,8 @@
           </div>
           <input type="submit" name="submit" value="Login" class="btn btn-secondary">
         </form>
+
+        <p class="mt-4">Existing user? Login <a class="text-warning" href="{{URL::to('/login')}}">here</a></p>
       </main>
 
 @endsection
